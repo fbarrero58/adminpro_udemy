@@ -1,3 +1,5 @@
-<p>
-  graficas1 works!
-</p>
+<div class="row">
+    <div class="col-6" *ngFor="let grafico of graficos">
+        <app-graficodona [titulo]="grafico.leyenda" [doughnutChartLabels]="grafico.labels" [doughnutChartData]="grafico.data" [doughnutChartType]="grafico.type"></app-graficodona>
+    </div>
+</div>
