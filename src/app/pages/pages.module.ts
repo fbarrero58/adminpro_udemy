@@ -18,6 +18,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +31,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficodonaComponent,
         AccountSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
     ],
     exports: [
         DashboardComponent,
@@ -41,7 +44,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         BrowserModule,
         PAGES_ROUTES,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule
     ]
 })
 export class PagesModule { }
