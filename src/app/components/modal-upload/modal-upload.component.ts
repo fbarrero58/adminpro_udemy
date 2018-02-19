@@ -45,7 +45,6 @@ export class ModalUploadComponent implements OnInit {
   subir_imagen() {
     this._sa.subir_archivo( this.imagenSubir, this._mus.tipo, this._mus.id )
         .then( resp => {
-
           this._mus.notificacion.emit( resp );
           this.cerrar_modal();
 
