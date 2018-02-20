@@ -25,7 +25,10 @@ export class HospitalService {
 
     let url = URL_SERVICIOS + '/hospital/'  + id;
 
-    return this.http.get(url);
+    return this.http.get(url)
+              .map( (resp: any) => {
+                return resp.hospital;
+              });
 
   }
 

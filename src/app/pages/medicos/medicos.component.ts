@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Medico } from '../../models/medico.model';
 import { MedicoService } from '../../services/medico/medico.service';
 
+declare var swal: any;
+
 @Component({
   selector: 'app-medicos',
   templateUrl: './medicos.component.html',
@@ -26,11 +28,11 @@ export class MedicosComponent implements OnInit {
   }
 
   borrar_medico(id: string) {
-
-  }
-
-  editar_medico(medico: Medico) {
-
+    this._ms.borrar_medico(id)
+            .subscribe( resp => {
+              this.cargar_medicos();
+              swal('Medico Eliminado', 'Medico eliminado exitosamente', 'success');
+            });
   }
 
   mostrar_modal(id: string) {
@@ -39,6 +41,12 @@ export class MedicosComponent implements OnInit {
 
   buscar_termino(termino: string) {
 
+    if (!termino) {
+      return this.cargar_medicos();
+    }
+
+    this._ms.buscar_medicos(termino)
+            .subscribe( resp => this.medicos = resp );
   }
 
   crear_medico() {
