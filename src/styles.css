@@ -27,3 +27,7 @@
 .oculto {
     display: none;
 }
+
+.img-50 {
+    width: 50px;
+}
